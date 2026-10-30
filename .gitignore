@@ -1,0 +1,8 @@
+.env
+certs/*.pem
+certs/*.key
+certs/*.crt
+nginx/https.conf
+backend/node_modules
+backend/coverage
+backend/junit.xml

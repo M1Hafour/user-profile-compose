@@ -1,0 +1,17 @@
+# Keep the backend image small and free of secrets. Only the app code and its
+# runtime dependencies go in (see Dockerfile: COPY . .).
+node_modules
+npm-debug.log
+.env
+.git
+*.zip
+*.key
+*.crt
+*.pem
+Dockerfile
+__tests__
+coverage
+junit.xml
+jest.config.js
+eslint.config.js
+.*
