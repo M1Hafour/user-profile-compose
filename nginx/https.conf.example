@@ -10,7 +10,7 @@ limit_req_zone $binary_remote_addr zone=api:10m rate=20r/s;
 # Port 80: send every visitor to HTTPS.
 server {
     listen 80;
-    server_name YOUR-NAME.example.com;
+    server_name myuserapp.duckdns.org;
     return 301 https://$host$request_uri;
 }
 
@@ -18,7 +18,7 @@ server {
 server {
     listen 443 ssl;
     http2 on;
-    server_name YOUR-NAME.example.com;
+    server_name myuserapp.duckdns.org;
     server_tokens off;
 
     ssl_certificate     /etc/nginx/certs/fullchain.pem;
