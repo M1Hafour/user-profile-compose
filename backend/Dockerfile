@@ -1,7 +1,9 @@
 # Backend image. Built on the server by `docker compose up -d --build`.
 # The build context is this folder (backend/), so only backend files are copied.
-
 FROM node:20-alpine AS deps
+
+RUN apk update && apk upgrade --no-cache
+
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
@@ -10,7 +12,7 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Pick up patched OS packages (e.g. openssl fixes) available in Alpine's repo
-RUN apk update && apk upgrade --no-cache
+
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
