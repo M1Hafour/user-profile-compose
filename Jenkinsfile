@@ -21,10 +21,10 @@ pipeline {
 
     environment {
         // ---- Server settings ----
-        DEPLOY_HOST = '16.170.142.141'                  // Elastic IP of the server
+        DEPLOY_HOST = '56.228.81.47'                  // Elastic IP of the server
         DEPLOY_DIR  = 'user-profile-app'                // folder in ec2-user's home directory on the server
         // The address Verify checks. Until the certificate is installed (GUIDE.md, part 8),
-        // use 'http://16.170.142.141'. Afterwards use the https name.
+        // use 'http://56.228.81.47'. Afterwards use the https name.
         PUBLIC_URL  = 'https://myuserapp.duckdns.org'
 
         // ---- Local image: built on this machine only so it can be scanned. Nothing is pushed. ----
