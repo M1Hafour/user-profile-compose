@@ -54,7 +54,7 @@ pipeline {
             post {
                 always {
                     junit testResults: 'backend/junit.xml', allowEmptyResults: true
-                    archiveArtifacts artifacts: 'backend/coverage/**', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'backend/coverage/**',allowEmptyArchive: true
                 }
             }
         }
