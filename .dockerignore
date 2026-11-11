@@ -1,0 +1,12 @@
+.git
+.env
+.env.*
+!.env.example
+certs
+backend/node_modules
+backend/coverage
+backend/junit.xml
+k8s-rendered
+**/*.pem
+**/*.key
+**/*.crt

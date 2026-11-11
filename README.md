@@ -44,3 +44,9 @@ npm ci
 npm test          # Jest
 npx eslint .      # lint
 ```
+
+## Deploy to the two-node K3s lab
+
+The Docker Compose setup remains available for local development. For the AWS K3s cluster, see [k8s/README.md](k8s/README.md). The Kubernetes deployment uses separate Nginx and Node.js images, MongoDB with a persistent volume, and Traefik Ingress.
+
+The Jenkinsfile now builds and tests the backend, builds and pushes both images to Docker Hub, then applies the Kubernetes manifests to the K3s master over SSH. Configure Jenkins credentials `dockerhub-creds` (Docker Hub username + access token) and `k3s-master-ssh` (SSH private key with username `ubuntu`). Make both Docker Hub repositories public for this initial setup. Create the `user-profile-secrets` Kubernetes Secret on the cluster before the first pipeline run; instructions are in [k8s/README.md](k8s/README.md).
