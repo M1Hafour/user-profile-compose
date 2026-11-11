@@ -3,10 +3,17 @@ kind: Ingress
 metadata:
   name: user-profile
   namespace: user-profile
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - myuserapp.duckdns.org
+      secretName: user-profile-tls
   rules:
-    - http:
+    - host: myuserapp.duckdns.org
+      http:
         paths:
           - path: /
             pathType: Prefix

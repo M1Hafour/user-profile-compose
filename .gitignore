@@ -9,3 +9,8 @@ backend/junit.xml
 
 # Jenkins rendered Kubernetes manifests
 k8s-rendered/
+
+# Kubernetes secrets and generated certificates
+*-secret.yaml
+*-secrets.yaml
+*.kubeconfig
